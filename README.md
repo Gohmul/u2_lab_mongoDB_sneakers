@@ -73,31 +73,34 @@ Use the MongoDB lesson to solve for the following:
 ```sh
 <--- solution goes here !--->
 ```
+db.products.find({ model:"4363" })
 
 2. Find all shoes that are either **red** or **black**.
 
 ```sh
 <--- solution goes here !--->
 ```
+db.products.find({ color:'Red'},{ color:'Black'})
 
 3. Insert **4 new** [Air Jordans](https://www.jordan.com/collection/) into our collection (you can just make up model #s and colors if you like):
 
 ```sh
 <--- solution goes here !--->
-```
+``` db.products.insertMany([{ model:3333 , brand: "Nike" , color: "Blue"},{ model:3334 , brand: "Nike" , color: "Green"},{ model:3335 , brand: "Nike" , color: "Yellow"},{ model:3336 , brand: "Nike" , color: "Turqoise"},])
 
 4. Update all **red** Jordans to **Maroon**:
 
 ```sh
 <--- solution goes here !--->
 ```
+db.products.updateMany ({ color: 'Red'}, {$set: {color: 'Maroon'}})
 
 5. Delete all model **4281** Air Jordans.
 
 ```sh
 <--- solution goes here !--->
 ```
-
+db.products.deleteMany ({ model:4281})
 ## Bonus
 
 Create a better representation of a "product".
